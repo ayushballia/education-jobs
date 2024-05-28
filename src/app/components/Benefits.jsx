@@ -1,19 +1,19 @@
 import React from "react";
-import benefitsData from "../data/benefitsData"
+// import benefitsData from "../data/benefitsData"
 
 import Image from "next/image";
 
 export default function Benefits() {
-  // const benefitsData = [
-  //   { icon: localCafeIcon, label: "Cafeteria" },
-  //   { icon: cottageIcon, label: "WFH option" },
-  //   { icon: directionIcon, label: "Transport" },
-  //   { icon: fitnessIcon, label: "Gym" },
-  //   { icon: medicalIcon, label: "Health care" },
-  //   { icon: supportAgentIcon, label: "Soft Skill" },
-  //   { icon: creditCardIcon, label: "Financial" },
-  //   { icon: dateIcon, label: "Time off" },
-  // ];
+  const benefitsData = [
+    { icon: localCafeIcon, label: "Cafeteria" },
+    { icon: cottageIcon, label: "WFH option" },
+    { icon: directionIcon, label: "Transport" },
+    { icon: fitnessIcon, label: "Gym" },
+    { icon: medicalIcon, label: "Health care" },
+    { icon: supportAgentIcon, label: "Soft Skill" },
+    { icon: creditCardIcon, label: "Financial" },
+    { icon: dateIcon, label: "Time off" },
+  ];
   return (
     <div className="w-3/12 max-h-64 px-8 pt-6 bg-white rounded-xl">
       <div className="flex mb-4 items-center justify-between">
