@@ -1,5 +1,13 @@
 import React from "react";
 // import benefitsData from "../data/benefitsData"
+import localCafeIcon from "../images/local_cafe.svg";
+import cottageIcon from "../images/cottage.svg";
+import directionIcon from "../images/directions_car.svg";
+import fitnessIcon from "../images/fitness_center.svg";
+import medicalIcon from "../images/medical_services.svg";
+import supportAgentIcon from "../images/support_agent.svg";
+import creditCardIcon from "../images/credit_card.svg";
+import dateIcon from "../images/date_range.svg";
 
 import Image from "next/image";
 
