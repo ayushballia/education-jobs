@@ -5,7 +5,7 @@ import Benefits from "./components/Benefits.jsx";
 import About from "./components/About.jsx"
 import PopularJobs from "./components/PopularJobs.jsx"
 import Beware from "./components/Beware.jsx"
-import SimilarJobs from "./components/SimilarJobs1.jsx"
+import SimilarJobs from "./components/SimilarJobs.jsx"
 
 export default function Home() {
   return (
