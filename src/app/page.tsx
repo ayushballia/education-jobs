@@ -3,7 +3,7 @@ import JobProfile from "./components/JobProfile.jsx";
 import JobDescriptions from "./components/JobDescriptions.jsx";
 import Benefits from "./components/Benefits.jsx";
 import About from "./components/About.jsx"
-import PopularJobs1 from "./components/PopularJobs1.jsx"
+import PopularJobs from "./components/PopularJobs.jsx"
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         <div className="flex flex-col gap-4 w-4/12">
           <JobSpecifications />
           <Benefits />
-          <PopularJobs1/>
+          <PopularJobs/>
         </div>
       </div>
     </>
