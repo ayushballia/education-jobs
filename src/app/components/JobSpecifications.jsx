@@ -7,7 +7,7 @@ import apartmentIcon from "../images/apartment.svg";
 import calendarMonthIcon from "../images/calendar_month (1).svg";
 const JobSpecifications = () => {
   return (
-    <div className="flex flex-col w-3/12 bg-white px-6 py-6 gap-2  rounded-xl">
+    <div className="flex flex-col bg-white px-6 py-6 gap-2  rounded-xl">
       <h1 className="text-2xl py-4 font-semibold">Job Specifications</h1>
 
       <div className="flex items-center px-2 gap-3">

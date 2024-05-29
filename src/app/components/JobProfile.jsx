@@ -7,7 +7,7 @@ import Button from "../components/Button";
 
 const JobProfile = () => {
   return (
-    <div className="flex flex-col w-8/12 bg-white rounded-xl px-4 py-6">
+    <div className="flex flex-col bg-white rounded-xl px-4 py-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-semibold capitalize">

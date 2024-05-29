@@ -23,7 +23,7 @@ export default function Benefits() {
     { icon: dateIcon, label: "Time off" },
   ];
   return (
-    <div className="w-3/12 max-h-64 px-8 pt-6 bg-white rounded-xl">
+    <div className="max-h-64 px-8 pt-6 bg-white rounded-xl">
       <div className="flex mb-4 items-center justify-between">
         <div>
           <h1 className="text-lg font-semibold">Benefits & Perks</h1>
