@@ -3,7 +3,7 @@ import JobProfile from "./components/JobProfile.jsx";
 import JobDescriptions from "./components/JobDescriptions.jsx";
 import Benefits from "./components/Benefits.jsx";
 import About from "./components/About.jsx"
-import PopularJobs from "./components/popularJobs.jsx"
+import PopularJobs from "./components/PopularJobs.jsx"
 
 export default function Home() {
   return (
