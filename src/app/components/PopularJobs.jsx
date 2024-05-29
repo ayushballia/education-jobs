@@ -52,7 +52,7 @@ const popularJobs = [
 export default function PopularJobs() {
   return (
     <div className="bg-white rounded-xl">
-      <div className="bg-amber-100 rounded-t-xl">
+      <div className="bg-orange-50 rounded-t-xl">
         <h1 className="text-2xl font-semibold p-5">Popular Jobs</h1>
       </div>
       <div className="flex flex-col gap-6 p-5">

@@ -25,6 +25,7 @@ const JobProfile = () => {
           <Image src={expIcon} width={17} height={17} alt="experience icon" />
           <p className="font-semibold text-xs text-blue-700">5-6 years</p>
         </div>
+
         <div className="flex items-center gap-2">
           <Image
             src={currencyIcon}
@@ -36,6 +37,7 @@ const JobProfile = () => {
             Bangaluru, India
           </p>
         </div>
+
         <div className="flex items-center gap-2">
           <Image
             src={currencyIcon}
@@ -45,6 +47,7 @@ const JobProfile = () => {
           />
           <p className="font-semibold text-xs text-blue-700">30-35K/ Month</p>
         </div>
+
         <div className="flex items-center gap-2">
           <Image
             src={calendarIcon}
@@ -55,26 +58,32 @@ const JobProfile = () => {
           <p className="font-semibold text-xs text-blue-700">Before 20 May</p>
         </div>
       </div>
+
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-      <div className="flex gap-2">
+
+      <div className="flex justify-evenly gap-2">
         <div className="flex items-center text-xs text-gray-600">
           <p>
             Posted: <span className="text-black font-semibold">Just now</span>
           </p>
         </div>
+
         <div className="flex items-center text-xs text-gray-600">
           <p>
             Applicants:{" "}
             <span className="text-black font-semibold">Less than 10</span>
           </p>
         </div>
+
         <div className="flex items-center text-xs text-gray-600">
           <p>
             Openings: <span className="text-black font-semibold">10</span>
           </p>
         </div>
-        <Button variant="default">Register to apply</Button>
-        <Button variant="blue">Login to apply</Button>
+        <div className="flex gap-4">
+          <Button variant="default">Register to apply</Button>
+          <Button variant="blue">Login to apply</Button>
+        </div>
       </div>
     </div>
   );
