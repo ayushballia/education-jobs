@@ -5,8 +5,26 @@ import searchIcon from "../images/fi_search.svg";
 import mapIcon from "../images/map-pin.svg";
 import dpsIcon from "../images/dps.svg";
 import SearchFilter from "../components/SearchFilter.jsx";
+import SchoolList from "../components/SchoolList.jsx"
 
 export default function institutePage() {
+  const schools = [
+    {
+      name: 'Delhi Public School',
+      location: 'Bengaluru, India',
+      activeJobs: 10,
+      logo: '/path/to/dpsIcon.png',
+      mapIcon: '/path/to/mapIcon.png'
+    },
+    {
+      name: 'National Public School',
+      location: 'Chennai, India',
+      activeJobs: 5,
+      logo: '/path/to/npsIcon.png',
+      mapIcon: '/path/to/mapIcon.png'
+    },
+    
+  ];
   return (
     <div className="flex gap-4 p-5 bg-gray-100">
       <div className="w-3/12">
@@ -18,7 +36,8 @@ export default function institutePage() {
 
       <div className="w-9/12">
         <p  className="text-lg font-semibold pb-4">145 +  Pre School</p>
-        <div className="flex flex-wrap justify-evenly items-center bg-white rounded-xl max-w-60">
+        <SchoolList/>
+        {/* <div className="flex flex-wrap justify-evenly items-center bg-white rounded-xl max-w-60">
           <div className="flex gap-1 flex-col items-center p-5">
             <Image src={dpsIcon} width={55} height={55} alt="company logo" />
             <p className="text-lg pt-3 font-semibold">Delhi Public school</p>
@@ -28,7 +47,7 @@ export default function institutePage() {
             </div>
             <p className="text-sm"><span className="font-semibold">Active Jobs:</span> 10</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
