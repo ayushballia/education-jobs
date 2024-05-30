@@ -26,15 +26,15 @@ export default function institutePage() {
     
   ];
   return (
-    <div className="flex gap-4 p-5 bg-gray-100">
-      <div className="w-3/12">
+    <div className="md:flex gap-4 p-5 bg-gray-100">
+      <div className="md:w-3/12">
         <div className="p-6 bg-white rounded-xl">
           <p className="text-base font-semibold">Search</p>
           <SearchFilter />
         </div>
       </div>
 
-      <div className="w-9/12">
+      <div className="md:w-9/12">
         <p  className="text-lg font-semibold pb-4">145 +  Pre School</p>
         <SchoolList/>
         {/* <div className="flex flex-wrap justify-evenly items-center bg-white rounded-xl max-w-60">
