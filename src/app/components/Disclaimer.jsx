@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 const Section = ({ title, content }) => (
   <li className="text-base text-blue-500 md:text-lg font-semibold my-4">
     {title}:
-    <ul className="pl-5 space-y-2 my-2 list-disc list-inside">
+    <ul className="pl-5 space-y-2 my-2 list-disc list-inside marker:text-blue-700">
       {content.map((item, idx) => (
         <li
           key={idx}
-          className="text-sm text-gray-700 md:text-base font-normal"
+          className="text-sm text-gray-700 md:text-base font-normal "
         >
           {item}
         </li>
