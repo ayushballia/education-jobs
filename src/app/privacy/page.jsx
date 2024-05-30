@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Section = ({ title, content }) => (
   <li className="text-base md:text-lg font-semibold my-4">
     {title}:
-    <ul className="ps-5 space-y-4 my-2 list-disc list-inside">
+    <ul className="pl-5 space-y-2 my-2 list-disc list-inside">
       {content.map((item, idx) => (
         <li key={idx} className="text-sm md:text-base font-normal">
           {item}
@@ -134,52 +134,44 @@ const sections = [
 
 export default function Privacy() {
   return (
-    <div className="py-5 bg-gray-100">
-      <h1 className="mb-2 text-lg md:text-3xl font-semibold text-center">
+    <div className="py-10 bg-gray-100">
+      <h1 className="mb-4 text-2xl md:text-4xl font-bold text-center text-gray-800">
         Privacy Policy for Education Jobs
       </h1>
-      <p className="text-sm md:text-xl text-center mb-2">
+      <p className="text-sm md:text-xl text-center text-gray-600 mb-6">
         Last Updated: 22.11.2023
       </p>
 
-      <div className="p-4 md:w-8/12 m-auto bg-white rounded-xl">
-        <p className="text-sm md:text-base">
-          Welcome to Education Jobs! This Privacy Policy outlines how we
-          collect, use, disclose, and protect your personal information when you
-          use our website and services. We are committed to ensuring the privacy
-          and security of your information. By accessing or using the Education
-          Jobs website (the &ldquo;Site&ldquo;) or any of our services, you
-          agree to the terms and conditions of this Privacy Policy.
+      <div className="p-6 md:w-8/12 m-auto bg-white shadow-md rounded-xl">
+        <p className="text-sm md:text-base text-gray-700 mb-6">
+          Welcome to Education Jobs! This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you use our website and services. We are committed to ensuring the privacy and security of your information. By accessing or using the Education Jobs website (the &ldquo;Site&ldquo;) or any of our services, you agree to the terms and conditions of this Privacy Policy.
         </p>
       </div>
 
-      <div className="md:w-8/12 mx-auto p-2">
+      <div className="md:w-8/12 mx-auto p-4">
         {sections.map((section, index) => (
-          <div key={index}>
-            <h2 className="text-lg md:text-xl font-semibold my-3 capitalize">
+          <div key={index} className="mb-6">
+            <h2 className="text-xl md:text-2xl font-semibold my-4 capitalize text-gray-800">
               {section.title}
             </h2>
-            <ol className="ps-5 my-2 space-y-1 list-decimal list-inside">
+            <ol className="pl-5 space-y-3 list-decimal list-inside">
               {section.data.map((item, idx) => (
                 <Section key={idx} title={item.title} content={item.content} />
               ))}
             </ol>
           </div>
         ))}
-        <h2 className="text-lg md:text-xl font-semibold my-2 capitalize">
-          security:
+        <h2 className="text-xl md:text-2xl font-semibold my-4 capitalize text-gray-800">
+          Security
         </h2>
-        <p>
-          We take reasonable measures to protect your personal information from
-          unauthorized access, use, or disclosure. However, no method of
-          transmission over the internet or electronic storage is 100% secure.
+        <p className="text-gray-700 mb-4">
+          We take reasonable measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the internet or electronic storage is 100% secure.
         </p>
-        <h2 className="text-lg md:text-xl font-semibold my-2 capitalize">
-          Changes to this Privacy Policy:
+        <h2 className="text-xl md:text-2xl font-semibold my-4 capitalize text-gray-800">
+          Changes to this Privacy Policy
         </h2>
-        <p>
-          We may update this Privacy Policy from time to time. We will notify
-          you of any changes by posting the new Privacy Policy on this page.
+        <p className="text-gray-700">
+          We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
         </p>
       </div>
     </div>
