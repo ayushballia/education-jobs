@@ -26,16 +26,16 @@ export default function institutePage() {
     
   ];
   return (
-    <div className="md:flex gap-4 p-5 bg-gray-100">
+    <div className="font-sans md:flex gap-4 p-5 bg-gray-100">
       <div className="md:w-3/12">
         <div className="p-6 bg-white rounded-xl">
-          <p className="text-base font-semibold">Search</p>
+          <p className="lg:text-lg text-base font-semibold text-gray-700">Search</p>
           <SearchFilter />
         </div>
       </div>
 
       <div className="md:w-9/12">
-        <p  className="text-lg font-semibold pb-4">145 +  Pre School</p>
+        <p  className="lg:text-lg text-base font-semibold text-gray-700 py-3">145 +  Pre School</p>
         <SchoolList/>
         {/* <div className="flex flex-wrap justify-evenly items-center bg-white rounded-xl max-w-60">
           <div className="flex gap-1 flex-col items-center p-5">

@@ -110,7 +110,7 @@ export default function SchoolList() {
         {schools.map((school, index) => (
           <div
             key={index}
-            className="flex gap-1 flex-col bg-white rounded-xl max-w-60 items-center p-5"
+            className="flex gap-1 flex-col bg-white rounded-xl shadow-md max-w-60 items-center p-5"
           >
             <Image
               src={school.logo}
@@ -118,21 +118,21 @@ export default function SchoolList() {
               height={55}
               alt={`${school.name} logo`}
             />
-            <p className="text-lg pt-3 font-semibold">{school.name}</p>
-            <div className="flex gap-2 items-center">
+            <p className="font-semibold text-base lg:text-lg text-gray-700 hover:text-gray-800 transition-all ease duration-500">{school.name}</p>
+            <div className="flex gap-1.5 items-center">
               <Image
                 src={school.mapIcon}
-                width={15}
-                height={15}
+                width={14}
+                height={14}
                 alt="map icon"
               />
-              <p className="text-base text-blue-600 font-semibold">
+              <p className="text-base text-blue-700 font-semibold">
                 {school.location}
               </p>
             </div>
-            <p className="text-sm">
-              <span className="font-semibold">Active Jobs:</span>{" "}
-              {school.activeJobs}
+            <p className="text-sm font-semibold">Active Jobs:{" "}
+              <span className="text-blue-700">{school.activeJobs}</span>
+              
             </p>
           </div>
         ))}
