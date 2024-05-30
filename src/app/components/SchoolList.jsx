@@ -16,71 +16,71 @@ const schools = [
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
   {
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
   {
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
   {
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
   {
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
   {
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
   {
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
   {
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
   {
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
   {
     name: "Delhi Public School",
     location: "Bengaluru, India",
     activeJobs: 10,
-    logo: "/path/to/dpsIcon.png",
-    mapIcon: "/path/to/mapIcon.png",
+    logo: dpsIcon,
+    mapIcon: mapIcon,
   },
 
   {
@@ -93,7 +93,7 @@ const schools = [
   // ...other school objects
 ];
 
-const itemsPerPage = 5
+const itemsPerPage = 5;
 export default function SchoolList() {
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -119,7 +119,7 @@ export default function SchoolList() {
               alt={`${school.name} logo`}
             />
             <p className="text-lg pt-3 font-semibold">{school.name}</p>
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-2 items-center">
               <Image
                 src={school.mapIcon}
                 width={15}
@@ -138,23 +138,23 @@ export default function SchoolList() {
         ))}
       </div>
       <ReactPaginate
-        previousLabel={'<'}
-        nextLabel={'>'}
-        breakLabel={'...'}
+        previousLabel={"<"}
+        nextLabel={">"}
+        breakLabel={"..."}
         pageCount={pageCount}
         marginPagesDisplayed={2}
         pageRangeDisplayed={5}
         onPageChange={handlePageClick}
-        containerClassName={'flex justify-center mt-4'}
-        pageClassName={'mx-1'}
-        pageLinkClassName={'px-3 py-1 bg-gray-200 rounded-full'}
-        activeClassName={'bg-blue-500 text-white'}
-        previousClassName={'mx-1'}
-        previousLinkClassName={'px-3 py-1 rounded-full'}
-        nextClassName={'mx-1'}
-        nextLinkClassName={'px-3 py-1 '}
-        breakClassName={'mx-1'}
-        breakLinkClassName={'px-3 py-1 bg-gray-200 rounded-full'}
+        containerClassName={"flex justify-center mt-4"}
+        pageClassName={"mx-1"}
+        pageLinkClassName={"px-3 py-1 bg-white bg-opacity-20 rounded-full"}
+        activeClassName={"bg-blue-600 text-white rounded-full"}
+        previousClassName={"mx-1"}
+        previousLinkClassName={"px-3 py-1 rounded-full"}
+        nextClassName={"mx-1"}
+        nextLinkClassName={"px-3 py-1 "}
+        breakClassName={"mx-1"}
+        breakLinkClassName={"px-3 py-1 bg-gray-200 rounded-full"}
       />
     </>
   );
