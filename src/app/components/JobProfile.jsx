@@ -61,7 +61,7 @@ const JobProfile = () => {
 
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
 
-      <div className="flex justify-evenly gap-2">
+      <div className="md:flex justify-evenly gap-2">
         <div className="flex items-center text-xs text-gray-600">
           <p>
             Posted: <span className="text-black font-semibold">Just now</span>

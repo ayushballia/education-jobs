@@ -8,7 +8,7 @@ export function Links() {
  
   return (
     <nav>
-      <ul className='flex gap-4 py-4'>
+      <ul className='flex gap-4 py-4 justify-center'>
         <li>
           <Link className={`link ${pathname === '/' ? 'active' : ''}`} href="/">
             Home
