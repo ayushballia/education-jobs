@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutPage() {
     return (
       <div className="bg-gray-100">
@@ -22,11 +24,8 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <img
-                src="/path/to/image.jpg"
-                alt="Education Jobs"
-                className="w-full h-auto rounded shadow"
-              />
+                <Image src="/path/to/image.jpg" width={100} height={100} alt="Education jobs"/>
+              
             </div>
           </div>
         </section>
@@ -132,11 +131,12 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col items-center">
               <div className="mb-6">
-                <img
+              <Image src="/path/to/image.jpg" width={100} height={100} alt="Education jobs"/>
+                {/* <img
                   src="/path/to/image.jpg"
                   alt="Advantage"
                   className="w-full h-auto rounded shadow"
-                />
+                /> */}
               </div>
               <div className="bg-white p-6 rounded shadow max-w-2xl">
                 <h3 className="text-xl font-bold text-indigo-600 mb-2">
@@ -145,7 +145,7 @@ export default function AboutPage() {
                 <p className="text-gray-700 mb-2">
                   Our mission is to empower educators and contribute to the
                   advancement of education in India. By connecting passionate
-                  educators with institutions that share our vision, we're driving
+                  educators with institutions that share our vision, we&apos;re driving
                   positive change in the sector.
                 </p>
                 <ul className="list-disc list-inside text-left text-gray-700">
