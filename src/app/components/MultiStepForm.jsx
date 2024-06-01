@@ -7,7 +7,11 @@ import sort from "../images/sort.svg";
 import workIcon from "../images/workIcon.svg";
 import Image from "next/image";
 
+import InstitutionTypeDropdown from "../components/InstitutionTypeDropdown.jsx";
+import IndustryTagInput from "../components/IndustryTagInput.jsx";
+
 const MultiStepForm = () => {
+  
   const [step, setStep] = useState(1);
 
   const nextStep = () => setStep(step + 1);
@@ -18,15 +22,17 @@ const MultiStepForm = () => {
     nextStep();
   };
 
+  
+
   return (
     <div className="flex gap-4 w-11/12 m-auto">
       <Sidebar step={step} />
       <div className="w-3/4 container bg-white mx-auto px-[70px] py-[75px] rounded-xl">
-        <h1 className="text-[26px] leading-[24px] font-bold">
+        <h1 className="text-[26px] leading-[24px] mb-8 font-bold">
           Impress the Employer with your{" "}
           <span className="text-[#0A65CC]">Experience</span>{" "}
         </h1>
-        <div className="steps py-6 mb-4 flex justify-between">
+        <div className="steps mb-4 flex justify-between mb-8 w-[574px]">
           <button
             className={`step flex gap-4 ${
               step === 1
@@ -171,30 +177,98 @@ const SidebarItem = ({ step, currentStep, label, icon }) => {
     </div>
   );
 };
+const institutionTypes = [
+    "University",
+    "College",
+    "Trade School",
+    "Online School",
+    "Research Institute",
+  ];
+
+  const handleInstitutionSelect = (selectedOption) => {
+    console.log("Selected Institution Type:", selectedOption);
+  };
 
 const BasicInformationForm = ({ onSubmit }) => (
   <form onSubmit={onSubmit}>
-    <div>
+    <div className="mb-8">
       <label className="text-[20px] leading-[20px] font-bold text-[#232323]">
         Currently Employed?
       </label>
       <div className="flex space-x-6 my-4">
         <button
           id="yesButton"
-          className="bg-[#0A65CC] text-white px-[20px] border border-gray-300 rounded-[15px] text-[20px] leading[24px]"
+          className="bg-[#0A65CC] text-white px-[27px] py-[10px] border border-gray-300 rounded-[15px] text-[20px] "
           onclick="selectOption('yes')"
         >
           Yes
         </button>
         <button
           id="noButton"
-          className="px-[27px] py-[15px] border border-gray-300 rounded-[15px] text-[20px] leading[24px]"
+          className="px-[27px] py-[10px] border border-gray-300 rounded-[15px] text-[20px] "
           onclick="selectOption('no')"
         >
           No
         </button>
       </div>
     </div>
+
+    <div className="mb-8">
+      <label className="text-[20px] leading-[20px] font-bold text-[#232323]">
+        Type of Experience
+      </label>
+      <div className="flex space-x-6 my-4">
+        <button
+          id="yesButton"
+          className="bg-[#0A65CC] text-white px-[27px] py-[10px] border border-gray-300 rounded-[15px] text-[20px] "
+          onclick="selectOption('yes')"
+        >
+          Teaching
+        </button>
+        <button
+          id="noButton"
+          className="px-[27px] py-[10px] border border-gray-300 rounded-[15px] text-[20px] "
+          onclick="selectOption('no')"
+        >
+          Non-Teaching
+        </button>
+        <button
+          id="noButton"
+          className="px-[27px] py-[10px] border border-gray-300 rounded-[15px] text-[20px] "
+          onclick="selectOption('no')"
+        >
+          Both
+        </button>
+      </div>
+    </div>
+
+    <div className="mb-8">
+      <label className="text-[20px] leading-[20px] font-bold text-[#232323]">
+        Institution Name
+      </label>
+      <div className="flex space-x-6 my-4">
+        <input
+          className="p-[20px] text-[10px] text-[#9199A3] border border-[#E4E5E8] rounded-[15px]"
+          type="text"
+          name="instituteName"
+          id="instituteName"
+          placeholder="Enter the institution name"
+        />
+      </div>
+    </div>
+
+    <TotalExperience />
+
+    <div className="">
+      <h2 className="mb-4 text-xl font-semibold">Type of Institution</h2>
+      <InstitutionTypeDropdown
+        options={institutionTypes}
+        onSelect={handleInstitutionSelect}
+      />
+      <h2 className="mt-6 mb-2 text-xl font-semibold">Industry</h2>
+      <IndustryTagInput />
+    </div>
+
     {/* Add more fields as necessary */}
     <button
       type="submit"
@@ -204,6 +278,71 @@ const BasicInformationForm = ({ onSubmit }) => (
     </button>
   </form>
 );
+
+const TotalExperience = () => {
+  const [years, setYears] = useState(0);
+  const [months, setMonths] = useState(0);
+
+  const changeValue = (type, delta) => {
+    if (type === "years") {
+      setYears((prev) => Math.max(0, prev + delta));
+    } else if (type === "months") {
+      setMonths((prev) => Math.max(0, prev + delta));
+    }
+  };
+
+  return (
+    <div className="mb-8">
+      <label className="text-[20px] leading-[20px] font-bold text-[#232323]">
+        Total Experience
+      </label>
+      <div className="flex space-x-8 my-4">
+        {/* Years */}
+        <div className="flex items-center border border-gray-300 rounded-md">
+          <button
+            className="px-3 py-2 text-gray-600"
+            onClick={() => changeValue("years", -1)}
+          >
+            -
+          </button>
+          <input
+            type="text"
+            value={`${years} Year${years !== 1 ? "s" : ""}`}
+            readOnly
+            className="w-44 text-center border-l border-r border-gray-300 focus:outline-none"
+          />
+          <button
+            className="px-3 py-2 text-gray-600"
+            onClick={() => changeValue("years", 1)}
+          >
+            +
+          </button>
+        </div>
+        {/* Months */}
+        <div className="flex items-center border border-gray-300 rounded-md">
+          <button
+            className="px-3 py-2 text-gray-600"
+            onClick={() => changeValue("months", -1)}
+          >
+            -
+          </button>
+          <input
+            type="text"
+            value={`${months} Month${months !== 1 ? "s" : ""}`}
+            readOnly
+            className="w-44 text-center border-l border-r border-gray-300 focus:outline-none"
+          />
+          <button
+            className="px-3 py-2 text-gray-600"
+            onClick={() => changeValue("months", 1)}
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const QualificationForm = ({ onSubmit }) => (
   <form onSubmit={onSubmit}>

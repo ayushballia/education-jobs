@@ -1,5 +1,5 @@
 import React from "react";
-import MultiStepForm from "../components/MultiStepForm.jsx";
+import MultiStepForm from "../components/MultiStepFormTest.jsx";
 
 export default function page() {
   return (
