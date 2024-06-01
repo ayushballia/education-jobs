@@ -54,6 +54,14 @@ export function Links() {
             About
           </Link>
         </li>
+        <li>
+          <Link
+            className={`link ${pathname === '/experienceForm' ? 'active' : ''}`}
+            href="/experienceForm"
+          >
+            Experience Form
+          </Link>
+        </li>
       </ul>
     </nav>
   )
