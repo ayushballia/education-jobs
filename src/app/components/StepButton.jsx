@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const StepButton = ({ step, currentStep, setStep, label, icon }) => (
   <button
+    type="button" // Ensure the button does not trigger form submission
     className={`step flex gap-4 ${
       step === currentStep
         ? "active border-b-2 border-[#0A65CC] text-[#0A65CC] font-semibold"

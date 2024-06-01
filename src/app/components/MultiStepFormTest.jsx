@@ -30,7 +30,7 @@ const MultiStepForm = () => {
         {step === 2 && <QualificationForm onSubmit={handleSubmit} />}
         {step === 3 && <PreferenceForm onSubmit={handleSubmit} />}
         {step > 1 && (
-          <button className="btn" onClick={prevStep}>
+          <button type="button" className="btn" onClick={prevStep}>
             Back
           </button>
         )}
