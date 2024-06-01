@@ -3,8 +3,7 @@ import MultiStepForm from "../components/MultiStepForm.jsx";
 
 export default function page() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Multi-Step Form</h1>
+    <div className="font-sans bg-gray-100">
       <MultiStepForm />
     </div>
     // <div className='flex gap-4'>

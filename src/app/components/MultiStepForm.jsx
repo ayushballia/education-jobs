@@ -2,6 +2,8 @@
 import { useState } from "react";
 import User from "../images/User.svg";
 import text from "../images/text.svg";
+import schoolIconGray from "../images/schoolIconGray.svg";
+import sort from "../images/sort.svg";
 import workIcon from "../images/workIcon.svg";
 import Image from "next/image";
 
@@ -17,15 +19,19 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex gap-4 w-11/12 m-auto">
       <Sidebar step={step} />
-      <div className="container mx-auto p-4">
-        <div className="steps mb-4 flex justify-between">
+      <div className="w-3/4 container bg-white mx-auto px-[70px] py-[75px] rounded-xl">
+        <h1 className="text-[26px] leading-[24px] font-bold">
+          Impress the Employer with your{" "}
+          <span className="text-[#0A65CC]">Experience</span>{" "}
+        </h1>
+        <div className="steps py-6 mb-4 flex justify-between">
           <button
             className={`step flex gap-4 ${
               step === 1
-                ? "active border-b-2 border-[#0A65CC] text-[#0A65CC]"
-                : ""
+                ? "active border-b-2 border-[#0A65CC] text-[#0A65CC] font-semibold"
+                : "font-normal text-[16px] leading-[20px] text-[#23232380]"
             }`}
             onClick={() => setStep(1)}
           >
@@ -38,25 +44,37 @@ const MultiStepForm = () => {
             Basic Information
           </button>
           <button
-            className={`step ${
+            className={`step flex gap-4 ${
               step === 2
-                ? "active border-b-2 border-[#0A65CC] text-[#0A65CC]"
-                : ""
+                ? "active border-b-2 border-[#0A65CC] text-[#0A65CC] font-semibold"
+                : "font-normal text-[16px] leading-[20px] text-[#23232380]"
             }`}
             onClick={() => setStep(2)}
             disabled={step < 2}
           >
+            <Image
+              src={schoolIconGray}
+              width={24}
+              height={24}
+              alt="Education jobs user icon"
+            />
             Qualification
           </button>
           <button
-            className={`step ${
+            className={`step flex gap-4 ${
               step === 3
-                ? "active border-b-2 border-[#0A65CC] text-[#0A65CC]"
-                : ""
+                ? "active border-b-2 border-[#0A65CC] text-[#0A65CC] font-semibold"
+                : "font-normal text-[16px] leading-[20px] text-[#23232380]"
             }`}
             onClick={() => setStep(3)}
             disabled={step < 3}
           >
+            <Image
+              src={sort}
+              width={24}
+              height={24}
+              alt="Education jobs user icon"
+            />
             Preference
           </button>
         </div>
@@ -77,8 +95,10 @@ const MultiStepForm = () => {
 
 const Sidebar = ({ step }) => {
   return (
-    <div className="w-1/4 p-4 bg-gray-100 h-screen">
-      <h2 className="text-xl font-bold mb-4">Setup Progress</h2>
+    <div className="w-1/4 p-4 bg-[#FFFFFF] h-screen rounded-xl border border-[#00000026]">
+      <h2 className="text-[20px] leading-[20px] font-bold mb-4">
+        Setup Progress
+      </h2>
       <div className="flex flex-col space-y-4">
         <SidebarItem
           step={step}
@@ -98,12 +118,7 @@ const Sidebar = ({ step }) => {
           label="Qualification"
           icon={workIcon}
         />
-        <SidebarItem
-          step={step}
-          currentStep={4}
-          label="Preference"
-          icon=""
-        />
+        <SidebarItem step={step} currentStep={4} label="Preference" icon="" />
       </div>
     </div>
   );
@@ -116,9 +131,9 @@ const SidebarItem = ({ step, currentStep, label, icon }) => {
   return (
     <div className="flex items-center">
       <div
-        className={`flex items-center justify-center w-8 h-8 border rounded-full mr-4 ${
+        className={`text-[20px] leading-[20px] font-base flex items-center justify-center w-8 h-8 border rounded-full mr-4 ${
           isActive
-            ? "border-blue-600 bg-blue-100"
+            ? "text-[20px] leading-[20px] font-bold border-blue-600 bg-blue-100"
             : isCompleted
             ? "border-green-600 bg-green-100"
             : "border-gray-300 bg-gray-100"
@@ -138,8 +153,14 @@ const SidebarItem = ({ step, currentStep, label, icon }) => {
             />
           </svg>
         ) : (
-          <Image src={icon} alt={label} width={13} height={13} className="w-6 h-6" />
-        // {icon}
+          <Image
+            src={icon}
+            alt={label}
+            width={13}
+            height={13}
+            className="w-6 h-6"
+          />
+          // {icon}
         )}
       </div>
       <span
@@ -154,11 +175,25 @@ const SidebarItem = ({ step, currentStep, label, icon }) => {
 const BasicInformationForm = ({ onSubmit }) => (
   <form onSubmit={onSubmit}>
     <div>
-      <label>Currently Employed?</label>
-      <select className="block w-full mt-1 border-gray-300 rounded-md">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
+      <label className="text-[20px] leading-[20px] font-bold text-[#232323]">
+        Currently Employed?
+      </label>
+      <div className="flex space-x-6 my-4">
+        <button
+          id="yesButton"
+          className="bg-[#0A65CC] text-white px-[20px] border border-gray-300 rounded-[15px] text-[20px] leading[24px]"
+          onclick="selectOption('yes')"
+        >
+          Yes
+        </button>
+        <button
+          id="noButton"
+          className="px-[27px] py-[15px] border border-gray-300 rounded-[15px] text-[20px] leading[24px]"
+          onclick="selectOption('no')"
+        >
+          No
+        </button>
+      </div>
     </div>
     {/* Add more fields as necessary */}
     <button
