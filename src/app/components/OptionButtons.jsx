@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const OptionButtons = ({ options, onSelect }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+
+  useEffect(() => {
+    onSelect(selectedOption); 
+  }, []);
 
   const handleSelect = (option) => {
     setSelectedOption(option);
@@ -13,11 +17,11 @@ const OptionButtons = ({ options, onSelect }) => {
       {options.map((option) => (
         <button
           key={option}
-          type="button" // Ensure the button does not trigger form submission
-          className={`px-[27px] py-[10px] border border-gray-300 rounded-[15px] text-[20px] ${
+          type="button"
+          className={`flex px-[27px] py-[10px] border border-gray-300 rounded-[15px] text-[20px] ${
             selectedOption === option ? "bg-blue-500 text-white" : "bg-white text-black"
           }`}
-          onClick={() => handleSelect(option)}
+          onClick={() => handleSelect(option)} 
         >
           {option}
         </button>
