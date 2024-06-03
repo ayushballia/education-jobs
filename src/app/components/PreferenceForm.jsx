@@ -1,16 +1,13 @@
 import React from "react";
 import FormSection from "./FormSection";
+import Preference from "./Preference.jsx"
+
 
 const PreferenceForm = ({ onSubmit }) => (
   <form onSubmit={onSubmit}>
-    <FormSection title="Job Preference">
-      <select className="block w-full mt-1 border-gray-300 rounded-md">
-        <option value="teaching">Teaching</option>
-        <option value="non-teaching">Non-Teaching</option>
-      </select>
-    </FormSection>
-    <button type="submit" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">
-      Start Your Journey
+    <Preference/>
+    <button type="submit" className="text-[16px] mt-4 px-[20px] py-[16px] bg-[#0A65CC] text-white rounded-[20px]">
+      Start Your Journey 🚀
     </button>
   </form>
 );
