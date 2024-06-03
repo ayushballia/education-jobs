@@ -1,10 +1,9 @@
+"use client";
 import React, { useState } from "react";
 import FormSection from "./FormSection";
 import OptionButtons from "./OptionButtons";
 import TotalExperience from "./TotalExperience";
-import InstitutionTypeDropdown from "./InstitutionTypeDropdown";
-import IndustryTagInput from "./IndustryTagInput";
-
+import DropDownContent from "./DropDownComponent.jsx";
 
 const institutionTypes = [
   "University",
@@ -18,11 +17,17 @@ const BasicInformationForm = ({ onSubmit }) => {
   const [currentlyEmployed, setCurrentlyEmployed] = useState(null);
   const [experienceType, setExperienceType] = useState(null);
   const [institutionName, setInstitutionName] = useState("");
-  const [institutionType, setInstitutionType] = useState(null);
-  const [industry, setIndustry] = useState([]);
+  const [institutionType, setInstitutionType] = useState([]);
 
-  const handleInstitutionSelect = (selectedOption) => {
-    setInstitutionType(selectedOption);
+  const handleInstitutionSelect = (selectedOptions) => {
+    setInstitutionType(selectedOptions);
+  };
+
+  const handleDelete = (index) => {
+    const updatedValues = selectedValues.filter((_, i) => i !== index);
+    setSelectedValues(updatedValues);
+    setSelectedOptions(updatedValues); // Ensure this updates the main form as well
+    onSelect(updatedValues);
   };
 
   return (
@@ -51,15 +56,11 @@ const BasicInformationForm = ({ onSubmit }) => {
       </FormSection>
       <TotalExperience />
       <FormSection title="Type of Institution">
-        
-        <InstitutionTypeDropdown
-          options={institutionTypes}
-          onSelect={handleInstitutionSelect}
-        />
+        <DropDownContent />
       </FormSection>
-      {/* <FormSection title="Industry">
-        <IndustryTagInput value={industry} onChange={setIndustry} />
-      </FormSection> */}
+      <FormSection title="Type of Role">
+        
+      </FormSection>
       <button
         type="submit"
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"

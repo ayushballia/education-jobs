@@ -1,33 +1,23 @@
 import React, { useState } from "react";
-import { ChevronDownIcon, XIcon } from "@heroicons/react/24/solid";
-import SelectedValuesParagraph from "../components/SelectedValuesParagraph.jsx";
+
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 const InstitutionTypeDropdown = ({ options, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOptions, setSelectedOptions] = useState("");
-  const [selectedValues, setSelectedValues] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleSelect = (option) => {
     if (!selectedOptions.includes(option)) {
-      setSelectedOptions([...selectedOptions, option]);
-      onSelect(option);
+      const newSelectedOptions = [...selectedOptions, option];
+      setSelectedOptions(newSelectedOptions);
+      onSelect(newSelectedOptions); // Pass the updated array of selected options
+      setIsOpen(false);
     }
-    setSelectedValues([...selectedValues, option]);
-    setIsOpen(false);
-  };
-
-  const handleDelete = (index) => {
-    const updatedValues = [...selectedValues];
-    updatedValues.splice(index, 1);
-    setSelectedValues(updatedValues);
   };
 
   return (
     <>
-    <SelectedValuesParagraph
-          selectedValues={selectedValues}
-          onDelete={handleDelete}
-        />
+      
       <div className="flex items-center relative w-full">
         <ChevronDownIcon className="absolute right-2 size-6" />
         <button
@@ -37,7 +27,7 @@ const InstitutionTypeDropdown = ({ options, onSelect }) => {
           }}
           className="w-full px-4 py-2 text-left bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none"
         >
-          {selectedOptions || "Select the Institution type"}
+          Select the Institution type
         </button>
         {isOpen && (
           <ul className="absolute left-0 w-full bg-white border border-gray-300 rounded-md shadow-lg z-10 mt-1">
@@ -52,6 +42,7 @@ const InstitutionTypeDropdown = ({ options, onSelect }) => {
             ))}
           </ul>
         )}
+       
       </div>
     </>
   );

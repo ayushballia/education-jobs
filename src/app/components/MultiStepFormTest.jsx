@@ -23,7 +23,7 @@ const MultiStepForm = () => {
       <div className="w-3/4 container bg-white mx-auto px-[70px] py-[75px] rounded-xl">
         <h1 className="text-[26px] leading-[24px] mb-8 font-bold">
           Impress the Employer with your{" "}
-          <span className="text-[#0A65CC]">Experience</span>{" "}
+          <span className="text-[#0A65CC]a">Experience</span>{" "}
         </h1>
         <StepNavigation step={step} setStep={setStep} />
         {step === 1 && <BasicInformationForm onSubmit={handleSubmit} />}
